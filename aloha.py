@@ -23,9 +23,8 @@ parser.add_argument('--multiplier', type=float, default=MULT)
 parser.add_argument('--continuous', action="store_false")
 args = parser.parse_args()
 
-# TEST
-# ./aloha.py --continuous --slot 0.01 --slots 1000 --clients 10 --packet-probability 0.01 --first-interval 0.1 --multiplier 2
-
+if not os.path.exists("./temp"):
+    os.makedirs("./temp")
 
 clients = []
 server = os.fork()
